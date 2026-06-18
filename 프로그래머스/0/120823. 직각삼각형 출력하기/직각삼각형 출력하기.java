@@ -9,7 +9,7 @@ public class Solution {
             for (int j=0; j<i+1; j++) {
                 System.out.printf("*");
             }
-            System.out.printf("\n");
+            System.out.println();
         }
     }
 }
