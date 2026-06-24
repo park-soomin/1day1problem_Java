@@ -2,8 +2,8 @@ class Solution {
     public int solution(int[] box, int n) {
         int answer = 1;
         
-        for (int i=0; i<3; i++) {
-            answer *= box[i] / n;
+        for (int num : box) {
+            answer *= num / n;
         }
         
         return answer;
