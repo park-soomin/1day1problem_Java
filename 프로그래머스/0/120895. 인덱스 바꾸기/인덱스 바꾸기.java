@@ -3,9 +3,8 @@ class Solution {
         
         char[] arr = my_string.toCharArray();
         
-        char temp = arr[num1];
-        arr[num1] = arr[num2];
-        arr[num2] = temp;
+        arr[num1] = my_string.charAt(num2);
+        arr[num2] = my_string.charAt(num1);
         
         String result = new String(arr);
         
