@@ -3,16 +3,10 @@ import java.util.Arrays;
 class Solution {
     public String solution(String my_string) {
         
-        String lower = my_string.toLowerCase();
+        char[] arr = my_string.toLowerCase().toCharArray();
         
-        String[] answer = lower.split("");
-        Arrays.sort(answer);
+        Arrays.sort(arr);
         
-        StringBuilder sb = new StringBuilder();
-        for (String c : answer) {
-            sb.append(c);
-        }
-        
-        return sb.toString();
+        return new String(arr);
     }
 }
