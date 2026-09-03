@@ -1,44 +1,22 @@
 class Solution {
     public String solution(String code) {
         
-        String ret = "";
+        StringBuilder sb = new StringBuilder();
         int mode = 0;
         
         for (int idx=0; idx<code.length(); idx++) {
+            char current = code.charAt(idx);
             
-            String str = code.substring(idx, idx+1);
+            if (current == '1') {
+                mode = (mode == 0) ? 1 : 0;
+                continue;
+            }
             
-            switch(mode) {
-                case 1:
-                    if (str.equals("1")) {
-                        mode = 0;
-                        break;
-                    }
-                    
-                    if (idx%2==1) {
-                        ret += str;
-                    }
-                    
-                    break;
-                    
-                case 0:
-                    if (str.equals("1")) {
-                        mode = 1;
-                        break;
-                    }
-                    
-                    if (idx%2==0) {
-                        ret += str;
-                    }
-                    
-                    break;
+            if (idx % 2 == mode) {
+                sb.append(current);
             }
         }
         
-        if (ret.equals("")) {
-            ret = "EMPTY";
-        }
-        
-        return ret;
+        return sb.length() == 0 ? "EMPTY" : sb.toString();
     }
 }
