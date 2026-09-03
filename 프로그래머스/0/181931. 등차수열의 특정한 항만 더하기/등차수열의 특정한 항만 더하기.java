@@ -3,10 +3,9 @@ class Solution {
         int answer = 0;
         
         for (int i=0; i<included.length; i++) {
-            if (included[i] == false) {
-                continue;
+            if (included[i]) {
+                answer += a + i * d;
             }
-            answer += a + i * d;
         }
         
         return answer;
